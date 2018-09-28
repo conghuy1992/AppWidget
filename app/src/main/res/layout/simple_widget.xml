@@ -8,6 +8,6 @@
         android:id="@+id/actionButton"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:background="@mipmap/ic_launcher" />
+        android:background="@drawable/ic_launcher" />
 
 </LinearLayout>

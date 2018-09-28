@@ -10,7 +10,8 @@ import android.widget.RemoteViews;
 
 public class ExampleAppWidgetProvider extends AppWidgetProvider {
     private String TAG = "ExampleAppWidgetProvider";
-    private String lock="lock";
+    private String lock = "lock";
+
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         Log.d(TAG, "onUpdate");
         final int N = appWidgetIds.length;
@@ -26,7 +27,7 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.appwidget_provider_layout);
-            views.setOnClickPendingIntent(R.id.button, getPendingSelfIntent(context,lock));
+            views.setOnClickPendingIntent(R.id.button, getPendingSelfIntent(context, lock));
 
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
@@ -43,6 +44,7 @@ public class ExampleAppWidgetProvider extends AppWidgetProvider {
             // do something
         }
     }
+
     protected PendingIntent getPendingSelfIntent(Context context, String action) {
         Intent intent = new Intent(context, getClass());
         intent.setAction(action);
