@@ -1,4 +1,4 @@
-package com.conghuy.AppWidget;
+package com.conghuy.nativewidget;
 
 import org.junit.Test;
 
