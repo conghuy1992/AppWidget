@@ -5,6 +5,13 @@
     android:minHeight="72dp"
     android:minWidth="300dp"
     android:updatePeriodMillis="300000" >
+    <!--Activity sẽ được mở khi thêm 1 widget ra screen..Có thể bỏ qua  -->
+<!--    android:configure="com.tienbm.ConfigActivity"-->
+    
+    <!-- Ảnh đại diện cho widget -->
+<!--    android:previewImage="@drawable/widget_preview"-->
 
+    <!-- Chế độ resize có thể mở rộng theo 2 chiều -->
+<!--    android:resizeMode="vertical|horizontal"-->
 </appwidget-provider>
 
