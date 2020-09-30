@@ -5,6 +5,7 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -27,6 +28,12 @@ public class MyWidgetProvider extends AppWidgetProvider {
             views.setOnClickPendingIntent(R.id.update, getPendingIntent(context, appWidgetIds));
             views.setOnClickPendingIntent(R.id.open_activity, openActivityPendingIntent(context));
 
+            Intent intent = new Intent(context, DataProvider.class);
+            intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+            intent.setData(Uri.parse(intent.toUri(Intent.URI_INTENT_SCHEME)));
+            views.setRemoteAdapter(R.id.listView, intent);
+            // Tell the AppWidgetManager to perform an update on the current app widget
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.listView);
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
